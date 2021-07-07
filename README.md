@@ -1,9 +1,9 @@
-#Dataset2BIDS
+## Dataset2BIDS
 
 Tool for converting DICOM folders of pre-/post- surgical data into a standard Brain Imaging Data Structure (BIDS) format dataset
 
-#Usage
-
+## Usage
+```
 Dataset2BIDS.sh -i <input_dir> -o <output_dir> -c <config> [-e <epre>] [-p <pre>] [-s <post> ] [-l <lpost>]
 
 Main arguments:
@@ -18,8 +18,9 @@ Optional input:
 	-e, --early-pre     early pre surgery unique identifier label
 	-s, --early-post    early post surgery unique identifier label     
 	-l, --late-post     late post surgery unique identifier label 
+```
 
-#Dependences
+## Dependences
 
 In order to use the tool _dcm2bids_ must be installed.
 
