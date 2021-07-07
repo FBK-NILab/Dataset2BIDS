@@ -1,6 +1,6 @@
 ## Dataset2BIDS
 
-Tool for converting DICOM folders of pre-/post- surgical data into a standard Brain Imaging Data Structure (BIDS) format dataset
+Tool for converting DICOM folders of pre-/post- surgical longitudinal data into the  Brain Imaging Data Structure (BIDS) standard
 
 ## Usage
 ```
