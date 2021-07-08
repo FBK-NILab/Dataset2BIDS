@@ -16,7 +16,7 @@ Main arguments:
     
 	-i, --inputdir      directory of the dicoms folders of the subjects    
 	-o, --outpudir      output directory of the resulting BIDS style dataset
-	-c, --config 		configurator file specify the naming convention
+	-c, --config        configurator file specify the naming convention
    
 Optional input:
 
@@ -216,10 +216,15 @@ for i in $( ls * -d );
 	sub_pad=`printf "%02d" ${sub}`;
 	list_=$( ls   ${i}'/'*  -d )
 	
-	[ -z ${oth_} ] || { list_=${list_//${oth_}/'_AAA'};}
-	[ -z ${pre_} ] || { list_=${list_//${pre_}/'_BBB'};}
-	[ -z ${post_} ] || { list_=${list_//${post_}/'_CCC'};}
-	[ -z ${lpost_} ] || { list_=${list_//${lpost}/'_DDD'};}
+	sub_string1='_AAABBCCAABBC'
+	sub_string2='_BBBBBCCBBBBC'
+	sub_string3='_CCCBBCCCCBBC'
+	sub_string4='_DDDBBCCDDBBC'
+	
+	[ -z ${oth_} ] || { list_=${list_//${oth_}/${sub_string1}};}
+	[ -z ${pre_} ] || { list_=${list_//${pre_}/${sub_string2}};}
+	[ -z ${post_} ] || { list_=${list_//${post_}/${sub_string3}};}
+	[ -z ${lpost_} ] || { list_=${list_//${lpost}/${sub_string4}};}
 	
 	
 	array=( $( echo "${list_}" ) )
@@ -232,22 +237,22 @@ for i in $( ls * -d );
 		sess=''
 		
 		if ! [ -z ${oth_} ]; then
-			j=${j//'_AAA'/${oth_}};
+			j=${j//${sub_string1}/${oth_}};
 			[ $( str_index ${j} ${oth_} ) -eq -1 ] || { sess0=$(( ${sess0}+1 )); sess_pad=`printf "%02d" ${sess0}`;sess="pre"-${sess_pad} ;}
 		fi
 
 		if ! [ -z ${pre_} ]; then	
-			j=${j//'_BBB'/${pre_}}	
+			j=${j//${sub_string2}/${pre_}}	
 			[ $( str_index ${j} ${pre_} ) -eq -1 ] || { sess1=$(( ${sess1}+1 )); sess_pad=`printf "%02d" ${sess1}`;sess="earlypre"-${sess_pad} ;}
 		fi
 		
 		if ! [ -z ${post_} ]; then				
-			j=${j//'_CCC'/${post_}}
+			j=${j//${sub_string3}/${post_}}
 			[ $( str_index ${j} ${post_} ) -eq -1 ] || { sess2=$(( ${sess2}+1 )); sess_pad=`printf "%02d" ${sess2}`;sess="earlypost"-${sess_pad} ;}
 		fi
 		
 		if ! [ -z ${lpost} ] ; then
-			j=${j//'_DDD'/${lpost}}
+			j=${j//${sub_string4}/${lpost}}
 			[ $( str_index ${j} ${lpost} ) -eq -1 ] || { sess3=$(( ${sess3}+1 )); sess_pad=`printf "%02d" ${sess3}`;sess="latepost"-${sess_pad} ;}
 		fi
 		
