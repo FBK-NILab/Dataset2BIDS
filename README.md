@@ -10,7 +10,7 @@ Main arguments:
     
 	-i, --inputdir      directory of the dicoms folderts of the subjects    
 	-o, --outpudir      outpu directory of the resulting BIDS style data
-	-c, --config 		configurator file specify the naming convention
+	-c, --config        configurator file specify the naming convention
    
 Optional input:
 
