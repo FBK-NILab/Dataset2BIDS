@@ -6,7 +6,7 @@ Tool for converting DICOM folders of pre-/post- surgical longitudinal data into 
 ```
 Dataset2BIDS.sh -i <input_dir> -o <output_dir> -c <config> [-e <epre>] [-p <pre>] [-s <post> ] [-l <lpost>]
 
-Main arguments:
+Compulsory arguments:
     
 	-i, --inputdir      directory of the dicoms folderts of the subjects    
 	-o, --outpudir      outpu directory of the resulting BIDS style data
