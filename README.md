@@ -8,9 +8,9 @@ Dataset2BIDS.sh -i <input_dir> -o <output_dir> -c <config> [-e <epre>] [-p <pre>
 
 Main arguments:
     
-    -i, --inputdir      directory of the dicoms folderts of the subjects    
-    -o, --outpudir      outpu directory of the resulting BIDS style data
-    -c, --config        configurator file specify the naming convention
+	-i, --inputdir      directory of the dicoms folderts of the subjects    
+	-o, --outpudir      outpu directory of the resulting BIDS style data
+	-c, --config        configurator file specify the naming convention
    
 Optional input:
 
