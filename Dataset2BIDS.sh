@@ -15,7 +15,7 @@ Usage:
 Main arguments:
     
 	-i, --inputdir      directory of the dicoms folders of the subjects    
-	-o, --outpudir      output directory of the resulting BIDS style dataset
+	-o, --outputdir      output directory of the resulting BIDS style dataset
 	-c, --config        configurator file specify the naming convention
    
 Optional input:
