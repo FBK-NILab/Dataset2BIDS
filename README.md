@@ -22,8 +22,8 @@ Optional input:
 
 ### Example of configuration file
 
-The option ```--config_``` (or ```-c```) accepts in input a JSON (_.json_) configuration file.
-Here is an example of a configuration file, where T1-w (named _T1-w_), rs-fMRI (named _task-rest_run-01_) and diffusion-weighted Imaging MRI data (named _dwi_) are considered.
+The option ```--config``` (or ```-c```) accepts in input a JSON (_.json_) configuration file.
+Here is an example of a configuration file, where T1-w (named _T1-w_), rs-fMRI (named _task-rest_run-01_) and Diffusion-Weighted Imaging MRI data (named _dwi_) are considered.
 
 
 ```
