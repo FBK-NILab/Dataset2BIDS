@@ -10,7 +10,7 @@ Compulsory arguments:
     
 	-i, --inputdir      directory of the dicoms folderts of the subjects    
 	-o, --outputdir      outpu directory of the resulting BIDS style data
-	-c, --config        configurator file specify the naming convention
+	-c, --config        configuration file specify the naming convention
    
 Optional input:
 
@@ -19,6 +19,47 @@ Optional input:
 	-s, --early-post    early post surgery unique identifier label     
 	-l, --late-post     late post surgery unique identifier label 
 ```
+
+### Example of configuration file
+
+The option ```--config_``` (or ```-c```) accepts in input a JSON (_.json_) configuration file.
+Here is an example of a configuration file, where T1-w (named _T1-w_), rs-fMRI (named _task-rest_run-01_) and diffusion-weighted Imaging MRI data (named _dwi_) are considered.
+
+
+```
+ {
+   "descriptions": [
+      {
+         "dataType": "anat",
+         "modalityLabel": "T1w",
+         "criteria": {
+            "SidecarFilename": "001*"
+         }
+      },
+      {
+         "dataType": "func",
+         "modalityLabel": "bold",
+         "customLabels": "task-rest_run-01",
+         "criteria": {
+            "SidecarFilename": "002*"
+         },
+         "sidecarChanges": {
+            "TaskName": "rest"
+         }
+      },      
+      {
+         "dataType": "dwi",
+         "modalityLabel": "dwi",
+         "criteria": {
+            "SidecarFilename": "003*"
+         }
+      }
+   ]
+}
+
+
+```
+
 
 ## Dependences
 
